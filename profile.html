@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>山永 航太 (PON) - 自己紹介</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      line-height: 1.7;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero .avatar {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #e94560, #0f3460);
+      border-radius: 50%;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      border: 3px solid rgba(255,255,255,0.3);
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+
+    .hero .nickname {
+      font-size: 1.1rem;
+      color: #e94560;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: 0.15em;
+    }
+
+    .hero .tagline {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.7);
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      padding: 8px 20px;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .social-links a:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: white;
+    }
+
+    /* Main content */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #0f3460;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #e94560;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section h2 .icon { font-size: 1.1rem; }
+
+    /* Basic info */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .info-item {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 16px;
+    }
+
+    .info-item .label {
+      font-size: 0.75rem;
+      color: #888;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+
+    .info-item .value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    /* Career timeline */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: linear-gradient(to bottom, #e94560, #0f3460);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .timeline-item:last-child { margin-bottom: 0; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      background: #e94560;
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px #e94560;
+    }
+
+    .timeline-year {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #e94560;
+      margin-bottom: 4px;
+    }
+
+    .timeline-content {
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .timeline-content strong {
+      color: #1a1a2e;
+      font-weight: 700;
+    }
+
+    .timeline-sub {
+      margin-top: 6px;
+      padding-left: 12px;
+      border-left: 2px solid #eee;
+    }
+
+    .timeline-sub p {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 4px;
+    }
+
+    /* Business cards */
+    .business-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .business-card {
+      background: linear-gradient(135deg, #f8f9fa, #fff);
+      border: 1px solid #e9ecef;
+      border-radius: 10px;
+      padding: 24px;
+      border-left: 4px solid #e94560;
+    }
+
+    .business-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 10px;
+    }
+
+    .business-card p {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Hobbies */
+    .hobby-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .hobby-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+
+    .hobby-item .emoji {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .hobby-item .text {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.9;
+      background: #f8f9fa;
+      padding: 24px;
+      border-radius: 8px;
+      border-left: 4px solid #0f3460;
+    }
+
+    /* Why startup */
+    .callout-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .callout {
+      background: #fffbf0;
+      border: 1px solid #ffd166;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    .callout::before {
+      content: '💡';
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px;
+      color: #aaa;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .section { padding: 24px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="avatar">P</div>
+    <h1>山永 航太</h1>
+    <div class="nickname">PON</div>
+    <p class="tagline">株式会社コテラス 共同創業・CEO<br>人的資本経営 × AI で組織を変える</p>
+    <div class="social-links">
+      <a href="https://www.facebook.com/kota.yamanaga" target="_blank">Facebook</a>
+      <a href="https://www.linkedin.com/in/kota-yamanaga-038408107/" target="_blank">LinkedIn</a>
+      <a href="https://twitter.com/kotapon_10" target="_blank">Twitter</a>
+      <a href="https://note.com/kotapon" target="_blank">Note</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- 基本情報 -->
+    <div class="section">
+      <h2><span class="icon">👤</span> 基本情報</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="label">氏名</div>
+          <div class="value">山永 航太（ヤマナガ コウタ）</div>
+        </div>
+        <div class="info-item">
+          <div class="label">ニックネーム</div>
+          <div class="value">PON</div>
+        </div>
+        <div class="info-item">
+          <div class="label">生年月日</div>
+          <div class="value">1994年3月31日（31歳）</div>
+        </div>
+        <div class="info-item">
+          <div class="label">出身</div>
+          <div class="value">東京都東久留米市</div>
+        </div>
+        <div class="info-item">
+          <div class="label">在住</div>
+          <div class="value">東京都世田谷区 太子堂あたり</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 職歴サマリー -->
+    <div class="section">
+      <h2><span class="icon">📋</span> 職歴サマリー</h2>
+      <p class="summary-text">
+        大学卒業後、2016年〜2019年まで楽天株式会社の人事部にて新卒採用を中心に従事。サステナビリティ部の兼任では社会起業家との協業プログラムを企画運営。
+        2020年1月に株式会社POL（現LabBase）に転職し、採用コンサルティング部門の立ち上げを事業戦略設計からコンサルティングまで一貫して担当。
+        2020年10月より株式会社カウシェで人事を副業として支援。
+        2022年1月に株式会社コテラスを共同創業。2023年12月に代表取締役CEOに就任。
+      </p>
+    </div>
+
+    <!-- 学歴・職歴 -->
+    <div class="section">
+      <h2><span class="icon">🏢</span> 学歴・職歴</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-year">2012</div>
+          <div class="timeline-content">
+            <strong>東京都立小平高等学校</strong> 普通科外国語コース 卒業
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2016</div>
+          <div class="timeline-content">
+            <strong>立教大学 異文化コミュニケーション学部</strong> 卒業<br>
+            <small style="color:#888">国際学生会議に没頭。留学先のエジンバラで英語力を磨く。</small>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2016 – 2019</div>
+          <div class="timeline-content">
+            <strong>楽天株式会社</strong>
+            <div class="timeline-sub">
+              <p>グループ人事部 採用推進課 新卒人材グループ</p>
+              <p>サステナビリティ部「楽天ソーシャルアクセラレーター」兼務（WELgee、おてつたびなどと協業）</p>
+              <p>グループ人事部付 ─ 人事制度設計、ハイポテンシャル人材育成など</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content">
+            <strong>株式会社POL（現LabBase）</strong>
+            <div class="timeline-sub">
+              <p>理系学生特化の採用コンサルティング部門を立ち上げ〜責任者として従事</p>
+              <p>大手企業の高度IT人材採用・ジョブ型雇用推進が得意領域</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2020 – 2022</div>
+          <div class="timeline-content">
+            <strong>株式会社カウシェ</strong> 人事組織立ち上げ（副業）
+            <div class="timeline-sub">
+              <p>社員4名のフェーズから社員20名規模になるまで中途採用基盤づくりを支援</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">2022 –</div>
+          <div class="timeline-content">
+            <strong>株式会社コテラス</strong> 共同創業・CEO（2023年12月〜）
+            <div class="timeline-sub">
+              <p>2024年10月〜 人的資本経営 × AI エージェント事業「Myles.」提供開始</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 事業 -->
+    <div class="section">
+      <h2><span class="icon">🚀</span> 事業詳細（株式会社コテラス）</h2>
+      <div class="business-grid">
+        <div class="business-card">
+          <h3>スマートポータル事業</h3>
+          <p>従業員体験（EX）を重視したデザインと機能を持ったポータルサイトの提案・デザイン・実装を支援。</p>
+        </div>
+        <div class="business-card">
+          <h3>人的資本経営 × AI 事業「Myles.」</h3>
+          <p>独自のAIエージェントがオンボーディングや文化の浸透支援など、社内の組織活動を促進する次世代HRサービス。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 起業理由 -->
+    <div class="section">
+      <h2><span class="icon">💡</span> 起業のきっかけ</h2>
+      <p style="color:#555; margin-bottom:16px; font-size:0.95rem;">
+        学生時代・楽天時代は起業を考えていなかったが、周りに創業社長が多くいる環境で自然とその世界へ。
+      </p>
+      <div class="callout-grid">
+        <div class="callout">創業起業家の成功事例：楽天（三木谷さん）</div>
+        <div class="callout">熱量の高い創業者：おてつたび（永岡さん）＆ WELgee（Jess）</div>
+        <div class="callout">最も身近な創業者：母（駄菓子屋 兼 セラピスト）、父（イタリアン料理）、祖父（左官屋）</div>
+        <div class="callout">1→10の創業フェーズ：LabBase（加茂さん）</div>
+        <div class="callout">0→1の創業フェーズ：カウシェ（門奈さん）</div>
+      </div>
+    </div>
+
+    <!-- 趣味・特技 -->
+    <div class="section">
+      <h2><span class="icon">🎯</span> 趣味・特技</h2>
+      <div class="hobby-list">
+        <div class="hobby-item">
+          <div class="emoji">📚</div>
+          <div class="text">
+            <strong>漫画</strong>：ワンピース・キングダムなど王道中心。最近のお気に入りは「龍と苺」（将棋漫画）と「天国大魔境」。おすすめあれば教えてください！
+          </div>
+        </div>
+        <div class="hobby-item">
+          <div class="emoji">🎤</div>
+          <div class="text">
+            <strong>お笑い</strong>：霜降り明星・金魚番長が推し。
+          </div>
+        </div>
+        <div class="hobby-item">
+          <div class="emoji">📻</div>
+          <div class="text">
+            <strong>ラジオ</strong>：霜降りのオールナイトニッポン全300回を完聴。最近はCOTEN RADIOにどっぷり。
+          </div>
+        </div>
+        <div class="hobby-item">
+          <div class="emoji">🕺</div>
+          <div class="text">
+            <strong>ストリートダンス</strong>：高校時代に経験あり。
+          </div>
+        </div>
+        <div class="hobby-item">
+          <div class="emoji">🍸</div>
+          <div class="text">
+            <strong>Social Bar 共同経営</strong>：東銀座「店長が毎日かわるSocial Bar」KOREWOKINI flat を共同経営。PON店長の日は「人的資本経営Bar」を開催。
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 山永 航太 (PON) All rights reserved.
+  </footer>
+
+</body>
+</html>
